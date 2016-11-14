@@ -30,7 +30,23 @@ class HelloTestDrivenDevelopmentTests: XCTestCase {
         
         let numberOfVowels = viewController.numberOfVowelsInString(string: string)
         
-        XCTAssertEqual(numberOfVowels, 3, "should find 3 vowels in Dominik")
+        XCTAssertEqual(numberOfVowels, 3, "should find 4 vowels in Dominik", file: "ViewContoller.swift", line: 24)
+    }
+    
+    func testMakeHeadLine_ReturnsStringWithEachWordStartCapital () {
+        let string = "this is A test headline"
+        
+        let headline = viewController.makeHeadLine(string: string)
+        
+        XCTAssertEqual(headline, "This Is A Test Headline")
+    }
+    
+    func testMakeHeadline_ReturnsStringWithEachWordStartCapital2() {
+        let string = "Here is another Example"
+        
+        let headline = viewController.makeHeadLine(string: string)
+        
+        XCTAssertEqual(headline, "Here Is Another Example")
     }
     
 }
